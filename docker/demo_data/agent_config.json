@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-02-24 22:13:06",
-  "defaultModel": "anthropic/claude-sonnet-4-6",
+  "generatedAt": "2026-03-16 11:00:01",
+  "defaultModel": "openai-codex/gpt-5.3-codex",
   "knownModels": [
     {
       "id": "anthropic/claude-sonnet-4-6",
@@ -48,14 +48,14 @@
       "provider": "Copilot"
     },
     {
-      "id": "github-copilot/claude-opus-4.6",
-      "label": "Claude Opus 4.6",
-      "provider": "GitHub Copilot"
-    },
-    {
       "id": "copilot/claude-opus-4.5",
       "label": "Claude Opus 4.5",
       "provider": "Copilot"
+    },
+    {
+      "id": "github-copilot/claude-opus-4.6",
+      "label": "Claude Opus 4.6",
+      "provider": "GitHub Copilot"
     },
     {
       "id": "copilot/gpt-4o",
@@ -71,47 +71,26 @@
       "id": "copilot/o3-mini",
       "label": "o3-mini",
       "provider": "Copilot"
+    },
+    {
+      "id": "openai-codex/gpt-5.4",
+      "label": "openai-codex/gpt-5.4",
+      "provider": "OpenClaw"
     }
   ],
   "agents": [
     {
-      "id": "shangshu",
-      "label": "尚书省",
-      "role": "尚书令",
-      "duty": "派单与升级裁决",
-      "emoji": "📮",
-      "model": "anthropic/claude-sonnet-4-6",
-      "defaultModel": "anthropic/claude-sonnet-4-6",
-      "isDefaultModel": true,
-      "workspace": "/Users/bingsen/.openclaw/workspace-shangshu",
-      "skills": [
-        {
-          "name": "dispatch",
-          "path": "/Users/bingsen/.openclaw/workspace-shangshu/skills/dispatch/SKILL.md",
-          "exists": true,
-          "description": "---"
-        },
-        {
-          "name": "kanban-local",
-          "path": "/Users/bingsen/.openclaw/workspace-shangshu/skills/kanban-local/SKILL.md",
-          "exists": true,
-          "description": "---"
-        },
-        {
-          "name": "organization-governance",
-          "path": "/Users/bingsen/.openclaw/workspace-shangshu/skills/organization-governance/SKILL.md",
-          "exists": true,
-          "description": "---"
-        }
-      ],
+      "id": "taizi",
+      "label": "太子",
+      "role": "太子",
+      "duty": "飞书消息分拣与回奏",
+      "emoji": "🤴",
+      "model": "openai-codex/gpt-5.3-codex",
+      "defaultModel": "openai-codex/gpt-5.3-codex",
+      "workspace": "/home/uddo/.openclaw/workspace-taizi",
+      "skills": [],
       "allowAgents": [
-        "zhongshu",
-        "menxia",
-        "hubu",
-        "libu",
-        "bingbu",
-        "xingbu",
-        "gongbu"
+        "zhongshu"
       ]
     },
     {
@@ -120,18 +99,10 @@
       "role": "中书令",
       "duty": "起草任务令与优先级",
       "emoji": "📜",
-      "model": "anthropic/claude-sonnet-4-6",
-      "defaultModel": "anthropic/claude-sonnet-4-6",
-      "isDefaultModel": true,
-      "workspace": "/Users/bingsen/.openclaw/workspace-zhongshu",
-      "skills": [
-        {
-          "name": "planning",
-          "path": "/Users/bingsen/.openclaw/workspace-zhongshu/skills/planning/SKILL.md",
-          "exists": true,
-          "description": "---"
-        }
-      ],
+      "model": "openai-codex/gpt-5.3-codex",
+      "defaultModel": "openai-codex/gpt-5.3-codex",
+      "workspace": "/home/uddo/.openclaw/workspace-zhongshu",
+      "skills": [],
       "allowAgents": [
         "menxia",
         "shangshu"
@@ -143,21 +114,40 @@
       "role": "侍中",
       "duty": "审议与退回机制",
       "emoji": "🔍",
-      "model": "anthropic/claude-sonnet-4-6",
-      "defaultModel": "anthropic/claude-sonnet-4-6",
-      "isDefaultModel": true,
-      "workspace": "/Users/bingsen/.openclaw/workspace-menxia",
+      "model": "openai-codex/gpt-5.3-codex",
+      "defaultModel": "openai-codex/gpt-5.3-codex",
+      "workspace": "/home/uddo/.openclaw/workspace-menxia",
+      "skills": [],
+      "allowAgents": [
+        "zhongshu"
+      ]
+    },
+    {
+      "id": "shangshu",
+      "label": "尚书省",
+      "role": "尚书令",
+      "duty": "派单与升级裁决",
+      "emoji": "📮",
+      "model": "openai-codex/gpt-5.3-codex",
+      "defaultModel": "openai-codex/gpt-5.3-codex",
+      "workspace": "/home/uddo/.openclaw/workspace-shangshu",
       "skills": [
         {
-          "name": "review",
-          "path": "/Users/bingsen/.openclaw/workspace-menxia/skills/review/SKILL.md",
+          "name": "dispatch",
+          "path": "/home/uddo/.openclaw/workspace-shangshu/skills/dispatch/SKILL.md",
           "exists": true,
-          "description": "---"
+          "description": "name: dispatch"
         }
       ],
       "allowAgents": [
-        "shangshu",
-        "zhongshu"
+        "zhongshu",
+        "menxia",
+        "hubu",
+        "libu",
+        "bingbu",
+        "xingbu",
+        "gongbu",
+        "libu_hr"
       ]
     },
     {
@@ -166,18 +156,10 @@
       "role": "户部尚书",
       "duty": "资源/预算/成本",
       "emoji": "💰",
-      "model": "anthropic/claude-sonnet-4-6",
-      "defaultModel": "anthropic/claude-sonnet-4-6",
-      "isDefaultModel": true,
-      "workspace": "/Users/bingsen/.openclaw/workspace-hubu",
-      "skills": [
-        {
-          "name": "data-analysis",
-          "path": "/Users/bingsen/.openclaw/workspace-hubu/skills/data-analysis/SKILL.md",
-          "exists": true,
-          "description": "---"
-        }
-      ],
+      "model": "openai-codex/gpt-5.3-codex",
+      "defaultModel": "openai-codex/gpt-5.3-codex",
+      "workspace": "/home/uddo/.openclaw/workspace-hubu",
+      "skills": [],
       "allowAgents": [
         "shangshu"
       ]
@@ -188,18 +170,10 @@
       "role": "礼部尚书",
       "duty": "文档/汇报/规范",
       "emoji": "📝",
-      "model": "anthropic/claude-sonnet-4-6",
-      "defaultModel": "anthropic/claude-sonnet-4-6",
-      "isDefaultModel": true,
-      "workspace": "/Users/bingsen/.openclaw/workspace-libu",
-      "skills": [
-        {
-          "name": "doc-writer",
-          "path": "/Users/bingsen/.openclaw/workspace-libu/skills/doc-writer/SKILL.md",
-          "exists": true,
-          "description": "---"
-        }
-      ],
+      "model": "openai-codex/gpt-5.3-codex",
+      "defaultModel": "openai-codex/gpt-5.3-codex",
+      "workspace": "/home/uddo/.openclaw/workspace-libu",
+      "skills": [],
       "allowAgents": [
         "shangshu"
       ]
@@ -210,18 +184,10 @@
       "role": "兵部尚书",
       "duty": "应急与巡检",
       "emoji": "⚔️",
-      "model": "anthropic/claude-sonnet-4-6",
-      "defaultModel": "anthropic/claude-sonnet-4-6",
-      "isDefaultModel": true,
-      "workspace": "/Users/bingsen/.openclaw/workspace-bingbu",
-      "skills": [
-        {
-          "name": "coding",
-          "path": "/Users/bingsen/.openclaw/workspace-bingbu/skills/coding/SKILL.md",
-          "exists": true,
-          "description": "---"
-        }
-      ],
+      "model": "openai-codex/gpt-5.3-codex",
+      "defaultModel": "openai-codex/gpt-5.3-codex",
+      "workspace": "/home/uddo/.openclaw/workspace-bingbu",
+      "skills": [],
       "allowAgents": [
         "shangshu"
       ]
@@ -232,18 +198,10 @@
       "role": "刑部尚书",
       "duty": "合规/审计/红线",
       "emoji": "⚖️",
-      "model": "anthropic/claude-sonnet-4-6",
-      "defaultModel": "anthropic/claude-sonnet-4-6",
-      "isDefaultModel": true,
-      "workspace": "/Users/bingsen/.openclaw/workspace-xingbu",
-      "skills": [
-        {
-          "name": "security-review",
-          "path": "/Users/bingsen/.openclaw/workspace-xingbu/skills/security-review/SKILL.md",
-          "exists": true,
-          "description": "---"
-        }
-      ],
+      "model": "openai-codex/gpt-5.3-codex",
+      "defaultModel": "openai-codex/gpt-5.3-codex",
+      "workspace": "/home/uddo/.openclaw/workspace-xingbu",
+      "skills": [],
       "allowAgents": [
         "shangshu"
       ]
@@ -254,21 +212,39 @@
       "role": "工部尚书",
       "duty": "工程交付与自动化",
       "emoji": "🔧",
-      "model": "anthropic/claude-sonnet-4-6",
-      "defaultModel": "anthropic/claude-sonnet-4-6",
-      "isDefaultModel": true,
-      "workspace": "/Users/bingsen/.openclaw/workspace-gongbu",
-      "skills": [
-        {
-          "name": "ops",
-          "path": "/Users/bingsen/.openclaw/workspace-gongbu/skills/ops/SKILL.md",
-          "exists": true,
-          "description": "---"
-        }
-      ],
+      "model": "openai-codex/gpt-5.3-codex",
+      "defaultModel": "openai-codex/gpt-5.3-codex",
+      "workspace": "/home/uddo/.openclaw/workspace-gongbu",
+      "skills": [],
       "allowAgents": [
         "shangshu"
       ]
+    },
+    {
+      "id": "libu_hr",
+      "label": "吏部",
+      "role": "吏部尚书",
+      "duty": "人事/培训/Agent管理",
+      "emoji": "👔",
+      "model": "openai-codex/gpt-5.3-codex",
+      "defaultModel": "openai-codex/gpt-5.3-codex",
+      "workspace": "/home/uddo/.openclaw/workspace-libu_hr",
+      "skills": [],
+      "allowAgents": [
+        "shangshu"
+      ]
+    },
+    {
+      "id": "zaochao",
+      "label": "钦天监",
+      "role": "朝报官",
+      "duty": "每日新闻采集与简报",
+      "emoji": "📰",
+      "model": "openai-codex/gpt-5.3-codex",
+      "defaultModel": "openai-codex/gpt-5.3-codex",
+      "workspace": "/home/uddo/.openclaw/workspace-zaochao",
+      "skills": [],
+      "allowAgents": []
     }
   ]
 }
